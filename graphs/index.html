@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<head>
+	<title>Graph test</title>
+	<script type="text/javascript" src="graph.js"></script>
+	<script type="text/javascript">
+	window.onload = function() {
+		var data = [];
+
+		data.push({value:9706,label:"April 8, 2015"});
+		data.push({value:9458,label:"April 9, 2015"});
+		data.push({value:9551,label:"April 10, 2015"});
+		data.push({value:10446,label:"April 11, 2015"});
+		data.push({value:12798,label:"April 12, 2015"});
+
+		var graph = new Graph({
+			element: document.getElementById("graph"), // element of graph (must be canvas)
+			data: data, // data (optional argument - you can use Graph.set_data(data) method as well)
+			path_color: "#DB8F0B", // color of the path (optional)
+			pointer_color: "#9C680E", // color of the pointer (optional)
+			background_color: "#141D36", // color of the background (optional)
+			label_color: "#FFFFFF", // color of the label (optional)
+			value_color: "#FFFFFF", // color of the value (optional)
+			line_width: 2, // width of the line ("path") (optional)
+			value_font: "10pt Tahoma", // font of the value (optional)
+			label_font: "8pt Tahoma", // font of the label (optional)
+			title: "Players online (last " + data.length + " days)", // title value (optional)
+			title_font: "10pt Tahoma", // title font (optional)
+			title_color: "#FFFFFF", // title color (optional)
+			title_background: "#060B1A", // title background (optional)
+			title_size: 0.3 // title size (height)
+		});
+	}
+	</script>
+</head>
+<body>
+	<canvas id="graph" width="350" height="100"></canvas>
+</body>
